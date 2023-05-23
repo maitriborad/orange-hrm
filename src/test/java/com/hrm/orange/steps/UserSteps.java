@@ -123,12 +123,14 @@ public class UserSteps {
     }
 
     @Then("^verify delete message \"([^\"]*)\"$")
-    public void verifyDeleteMessage(String expected) {
+    public void verifyDeleteMessage(String expected) throws InterruptedException {
+        Thread.sleep(500);
        Assert.assertEquals(new ViewSystemUsersPage().getSuccessfulDeleteText(),expected,"User is not deleted");
     }
 
     @Then("^verify no record message \"([^\"]*)\"$")
-    public void verifyNoRecordMessage(String expected){
+    public void verifyNoRecordMessage(String expected) throws InterruptedException {
+        Thread.sleep(500);
         Assert.assertEquals(new AddUserPage().getNoRecordFoundText(),expected,"User is found");
     }
 }

@@ -48,7 +48,7 @@ public class LoginSteps {
     }
 
     @And("^Mouse hover on Logout and click$")
-    public void mouseHoverOnLogoutAndClick() {
+    public void mouseHoverOnLogoutAndClick() throws InterruptedException {
         new DashboardPage().setUserLogout();
     }
 

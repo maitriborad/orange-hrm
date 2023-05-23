@@ -14,10 +14,10 @@ public class LoginPage extends Utility {
     PageFactory.initElements(driver, this);
   }
 
-    @FindBy(xpath = "//input[@placeholder='username']")
+    @FindBy(xpath = "//input[@name='username']")
     public WebElement userName;
 
-    @FindBy(xpath = "//input[@placeholder='password']")
+    @FindBy(xpath = "//input[@name='password']")
     public WebElement password;
     @CacheLookup
     @FindBy(xpath = "//button[normalize-space()='Login']")

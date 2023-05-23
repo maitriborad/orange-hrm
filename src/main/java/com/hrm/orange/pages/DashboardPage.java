@@ -21,11 +21,16 @@ public class DashboardPage extends Utility {
     @FindBy(xpath = "//img[@class='oxd-userdropdown-img']")
     WebElement userLogo;
     @CacheLookup
+    @FindBy(xpath = "//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']")
+    WebElement logoutArrow;
+    @CacheLookup
     @FindBy(xpath = "(//a[@class='oxd-userdropdown-link'])[4]")
     WebElement userLogout;
 
     //this method will click on logout
-    public void setUserLogout() {
+    public void setUserLogout() throws InterruptedException {
+        clickOnElement(logoutArrow);
+        Thread.sleep(500);
         mouseHoverToElementAndClick(userLogout);
         log.info("Mouse hover on " + userLogout.toString());
     }
